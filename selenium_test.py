@@ -8,7 +8,7 @@ import time
 
 
 driver_path = 'msedgedriver.exe'
-download_path = 'downloads/'
+download_path = r'fullpath-to\Downloads' # Change to full path
 
 options = webdriver.EdgeOptions()
 options.add_experimental_option('prefs', {
