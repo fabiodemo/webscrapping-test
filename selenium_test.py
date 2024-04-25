@@ -15,4 +15,10 @@ button = wait.until(EC.element_to_be_clickable((By.ID, 'btnDownloadUrl')))
 
 button.click()
 
+time.sleep(5)
+
+download_link = driver.find_element(By.CLASS_NAME, 'download-link')
+
+file_url = download_link.get_attribute('href')
+
 driver.quit()
