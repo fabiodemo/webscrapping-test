@@ -1,14 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'page'
+url = 'https://dados.gov.br/dados/conjuntos-dados/serie-historica-de-precos-de-combustiveis-e-de-glp'
 
 response = requests.get(url)
 response.raise_for_status()  # isso vai lançar uma exceção se a requisição falhar
 
 soup = BeautifulSoup(response.text, 'html.parser')
 
-links = soup.find_all('a', text='acessar recurso')
+links = soup.find_all('a', string='acessar recurso')
 
 # Iterar sobre cada link encontrado e fazer o download do CSV
 for link in links:
